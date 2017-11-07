@@ -12,7 +12,12 @@
 using namespace std;
 
 vector<int> array_left_rotation(vector<int> a, int n, int k) {
-    
+    vector<int> output(n);
+    for(int i=0; i<n; i++){
+        int old_index = (i+k)%n;
+        output[i] = a[old_index];
+    }
+    return output;
 }
 
 int main(){
