@@ -6,33 +6,25 @@
 //  Copyright © 2017 Stewart Dulaney. All rights reserved.
 //
 
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
 #include <iostream>
-#include <algorithm>
-#include <unordered_map>
+#include <vector>
+#include <cmath>
 
 using namespace std;
 
 int number_needed(string a, string b) {
-    
+    int count = 0;
+    vector<int> freq(26, 0);
+    for(int i=0; i<a.length(); i++){
+        freq[a[i]-'a']++;
+    }
+    for(int i=0; i<b.length(); i++){
+        freq[b[i]-'a']--;
+    }
+    for(int i=0; i<freq.size(); i++){
+        count += abs(freq[i]);
+    }
+    return count;
 }
 
 int main(){
