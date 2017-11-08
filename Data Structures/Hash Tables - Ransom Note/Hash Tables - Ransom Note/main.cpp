@@ -6,33 +6,24 @@
 //  Copyright © 2017 Stewart Dulaney. All rights reserved.
 //
 
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
 #include <iostream>
-#include <algorithm>
+#include <vector>
 #include <unordered_map>
 
 using namespace std;
 
 bool ransom_note(vector<string> magazine, vector<string> ransom) {
-    
+    unordered_map<string, int> words;
+    for(int i=0; i<magazine.size(); i++){
+        words[magazine[i]]++;
+    }
+    for(int i=0; i<ransom.size(); i++){
+        if(words[ransom[i]]<=0)
+            return false;
+        else
+            words[ransom[i]]--;
+    }
+    return true;
 }
 
 int main(){
