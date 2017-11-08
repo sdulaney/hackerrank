@@ -24,8 +24,15 @@ struct Node {
 };
 
 bool has_cycle(Node* head) {
-    // Complete this function
-    // Do not write the main method
+    Node* slow = head;
+    Node* fast = head;
+    while(fast != NULL && fast->next != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast)
+            return true;
+    }
+    return false;
 }
 
 int main(int argc, const char * argv[]) {
