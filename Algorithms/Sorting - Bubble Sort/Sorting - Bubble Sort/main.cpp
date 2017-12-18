@@ -28,7 +28,6 @@ int bubbleSort(vector<int>& data) {
     return numberOfSwaps;
 }
 
-
 int main(){
     int n;
     cin >> n;
