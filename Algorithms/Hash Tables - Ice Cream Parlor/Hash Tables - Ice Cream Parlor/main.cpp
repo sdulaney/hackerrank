@@ -8,7 +8,7 @@
 
 #include <iostream>     // std::cout, std::cin
 #include <vector>       // std::vector
-#include <algorithm>    // std::sort, std::max, std::min
+#include <algorithm>    // std::sort, std::max, std::min, std::lower_bound
 using namespace std;
 
 int indexOf(vector<int> arr, int value, int excludeThis) {
@@ -31,7 +31,18 @@ int* getIndicesFromValues(vector<int> arr, int value1, int value2) {
 }
 
 void solve(vector <int> arr, int money) {
-    // Complete this function
+    vector<int> sortedArr = arr;
+    int n = sizeof(sortedArr) / sizeof(sortedArr[0]);
+    sort(sortedArr.begin(), sortedArr.begin() + n);
+    for(int i = 0; i < n; i++) {
+        int complement = money - sortedArr[i];
+        vector<int>::iterator lower = lower_bound(sortedArr.begin() + 1, sortedArr.end(), complement);
+        if(*lower == complement) {
+            int* indices = getIndicesFromValues(arr, sortedArr[i], complement);
+            cout << *indices << " " << *(indices + 1) << endl;
+        }
+        
+    }
 }
 
 int main() {
