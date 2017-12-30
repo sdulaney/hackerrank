@@ -22,7 +22,12 @@ int indexOf(vector<int> arr, int value, int excludeThis) {
 }
 
 int* getIndicesFromValues(vector<int> arr, int value1, int value2) {
-    
+    int index1 = indexOf(arr, value1, -1);
+    int index2 = indexOf(arr, value2, index1);
+    int* indices = new int[2];
+    *(indices) = min(index1, index2);
+    *(indices + 1) = max(index1, index2);
+    return indices;
 }
 
 void solve(vector <int> arr, int money) {
