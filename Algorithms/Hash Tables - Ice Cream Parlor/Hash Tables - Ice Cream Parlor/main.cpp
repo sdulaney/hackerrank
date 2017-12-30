@@ -6,9 +6,18 @@
 //  Copyright © 2017 Stewart Dulaney. All rights reserved.
 //
 
-#include <iostream>
-#include <vector>
+#include <iostream>     // std::cout, std::cin
+#include <vector>       // std::vector
+#include <algorithm>    // std::sort, std::max, std::min
 using namespace std;
+
+int indexOf(vector<int> arr, int vaue, int excludeThis) {
+    
+}
+
+int* getIndicesFromValues(vector<int> arr, int value1, int value2) {
+    
+}
 
 void solve(vector <int> arr, int money) {
     // Complete this function
