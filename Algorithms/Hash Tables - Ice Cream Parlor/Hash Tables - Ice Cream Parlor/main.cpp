@@ -11,8 +11,14 @@
 #include <algorithm>    // std::sort, std::max, std::min
 using namespace std;
 
-int indexOf(vector<int> arr, int vaue, int excludeThis) {
-    
+int indexOf(vector<int> arr, int value, int excludeThis) {
+    int n = sizeof(arr) / sizeof(arr[0]);
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == value && i != excludeThis) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 int* getIndicesFromValues(vector<int> arr, int value1, int value2) {
