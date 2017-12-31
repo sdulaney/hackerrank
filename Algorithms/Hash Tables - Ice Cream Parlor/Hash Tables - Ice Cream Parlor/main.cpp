@@ -12,8 +12,8 @@
 using namespace std;
 
 int indexOf(vector<int> arr, int value, int excludeThis) {
-    for(int i = 0; i < arr.size(); i++) {
-        if(arr[i] == value && i != excludeThis) {
+    for(int i = 1; i <= arr.size(); i++) {
+        if(arr[i - 1] == value && i != excludeThis) {
             return i;
         }
     }
