@@ -40,8 +40,8 @@ void solve(vector <int> arr, int money) {
         if(*lower == complement) {
             int* indices = getIndicesFromValues(arr, sortedArr[i], complement);
             cout << *indices << " " << *(indices + 1) << endl;
+            break;
         }
-        
     }
 }
 
