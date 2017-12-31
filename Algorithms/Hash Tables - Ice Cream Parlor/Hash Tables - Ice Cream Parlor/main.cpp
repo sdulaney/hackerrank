@@ -12,8 +12,7 @@
 using namespace std;
 
 int indexOf(vector<int> arr, int value, int excludeThis) {
-    int n = sizeof(arr) / sizeof(arr[0]);
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < arr.size(); i++) {
         if(arr[i] == value && i != excludeThis) {
             return i;
         }
@@ -32,7 +31,7 @@ int* getIndicesFromValues(vector<int> arr, int value1, int value2) {
 
 void solve(vector <int> arr, int money) {
     vector<int> sortedArr = arr;
-    int n = sizeof(sortedArr) / sizeof(sortedArr[0]);
+    int n = sortedArr.size();
     sort(sortedArr.begin(), sortedArr.begin() + n);
     for(int i = 0; i < n; i++) {
         int complement = money - sortedArr[i];
